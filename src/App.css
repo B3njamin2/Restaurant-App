@@ -1,38 +1,138 @@
-.App {
-  text-align: center;
+
+body{
+  width: 100%;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+  color: #F4CE14;
+  font-size: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h3 {
+  font-size: 25px;
+}
+
+.navbar {
+  padding: 10px 13%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  overflow: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.navLinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navLinks li {
+  display: inline-block;
+  border-radius: 16px;
+  padding: 0.5em 1em;
 }
+
+.navLinks li a{
+  color: #000000;
+  white-space: nowrap;
+}
+
+.navLinks li:hover{
+  background-color: #F4CE14;
+  transition: background-color 1s ease;
+}
+
+.header {
+  background-color: #495e57;
+  padding: 40px 13%;
+  display: flex;
+  overflow: auto;
+  justify-content: space-between;
+}
+
+.header section {
+color: #EDEFEE;
+padding: 10px ;
+width: 40%;
+min-width: 10em;
+
+margin-right: 5%;
+}
+
+.header > img {
+  max-width: 40%;
+  min-width: 20em;
+  height: auto;
+  object-fit: contain;
+}
+
+.headerText{
+  margin-bottom: 4em;
+}
+
+.hidden{
+  display: none;
+}
+
+.hamburgerMenu {
+  display: none;
+  cursor: pointer;
+}
+
+.button {
+  background-color: #F4CE14;
+  color: black;
+  padding: 14px 18px;
+  border: none;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 800px){
+
+
+  .navLinks {
+    display: none;
+  }
+
+  .navLinks.visible {
+    display: flex;
+    background: #edefee;
+    padding: 10px 0;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    Right: 8%;
+    width: 130px;
+    /* align-items: center; */
+    border-radius: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navLinks.visible li a {
+    color: #000000;
+  }
+
+  .navbar{
+    background:#fff;
+    padding: 10px 13%;
+    transition: all 0.3s ease-in-out;
+  }
+  .hamburgerMenu {
+    display: block;
+    cursor: pointer;
+  }
+
+}
+
