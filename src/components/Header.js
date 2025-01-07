@@ -1,7 +1,10 @@
 import {Link} from 'react-router-dom';
 import MainLogoImg from  '../icons_assets/restaurant.jpg';
+import { useLocation } from 'react-router-dom';
+
 function Header() {
-    return (
+    const location = useLocation();
+    return(
         <header className='header'>
             <section>
                 <div className='headerText'>
@@ -13,9 +16,10 @@ function Header() {
                     Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                     Donec hendrerit est ut purus mattis
                     </p>
-
                 </div>
-                <Link to="/booking" className='button '>
+                <Link to="/booking" className= {`button
+                    ${location.pathname === "/booking" || location.pathname === "/confirmed"? "hidden" : ""}`
+                }>
                     Reserve now
                 </Link>
             </section>

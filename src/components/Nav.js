@@ -7,15 +7,18 @@ function Nav() {
     const handleMenuClick = () =>{
         setOpenMenu(!openMenu);
     }
+    const handleMouseLeave = () => {
+        openMenu && setOpenMenu(false);
+    };
     return (
-        <nav className = {'navbar'}>
+        <nav className = "navbar container-responsive-padding">
             <Link to="/">
                 <img src={MainLogoImg} alt='Main Logo'></img>
             </Link>
-            <button className='hamburgerMenu button' onClick={handleMenuClick} aria-label="Toggle menu" >
+            <button className='hamburgerMenu button' onClick={handleMenuClick} aria-label="Toggle menu">
                 <img src={HamburgerImg} alt="Hamburger Menu" />
             </button>
-            <ul className={`navLinks ${openMenu ? "visible" : ""}`}>
+            <ul className={`navLinks ${openMenu ? "visible" : ""}`} onMouseLeave={handleMouseLeave}>
                 <li>
                     <Link to = '/'>Home</Link>
                 </li>
@@ -26,7 +29,7 @@ function Nav() {
                     <Link to = '/'>Menu</Link>
                 </li>
                 <li>
-                    <Link to = '/'>Reservations</Link>
+                    <Link to = '/booking'>Reservations</Link>
                 </li>
                 <li>
                     <Link to = '/'>Order Online</Link>
